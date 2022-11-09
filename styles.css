@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  ::selection {
+    color: rgb(38, 38, 78);
+    background-color: #faaca8;
+  }
+  
+  body {
+    height: 100vh;
+    display: grid;
+    font-family: 'Work Sans', sans-serif;
+    background: #ddd6f3; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      45deg,
+      #faaca8,
+      #ddd6f3
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      45deg,
+      #faaca8,
+      #ddd6f3
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  
+  .main-container {
+    max-width: 80%;
+    padding: 1em;
+    justify-self: center;
+    align-self: center;
+    background: #efefbb; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #d4d3dd,
+      #efefbb
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #d4d3dd,
+      #efefbb
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 8px;
+    box-shadow: 0 0 1em lightcoral;
+  }
+  
+  h2 {
+    font-weight: bold;
+    font-size: 1.8em;
+    color: rgb(38, 38, 78);
+  }
+  
+  .description {
+    max-width: 80%;
+    margin-block: 0.7em 1.4em;
+    font-size: 0.9em;
+    line-height: 1.4;
+    color: rgb(102, 102, 102);
+  }
+  
+  .love-block {
+    display: grid;
+    grid-template-areas:
+      'emoji-1 main emoji-4'
+      'emoji-2 main emoji-5'
+      'emoji-3 main emoji-6';
+  }
+  
+  .main-block {
+    grid-area: main;
+    align-self: center;
+  }
+  
+  .pop-up-emoji-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .pop-up-emoji {
+    font-size: 0.8em;
+    text-align: center;
+    animation: popUpEmoji 1.2s ease-out forwards;
+  }
+  
+  @keyframes popUpEmoji {
+    from {
+      font-size: 0;
+      opacity: 0;
+    }
+  
+    to {
+      font-size: 2em;
+      opacity: 1;
+    }
+  }
+  
+  .i-love-zanzouneh {
+    font-size: 0.8em;
+    font-weight: 700;
+    font-family: 'Poor Story', cursive;
+    text-align: center;
+    color: rgb(38, 38, 78);
+    opacity: 0;
+    animation: popUpLove 1.2s ease-out forwards;
+  }
+  
+  @keyframes popUpLove {
+    from {
+      font-size: 0;
+      opacity: 0;
+    }
+  
+    to {
+      font-size: 1.2em;
+      opacity: 1;
+    }
+  }
+  
+  .plus-one {
+    font-size: 2em;
+    font-weight: 700;
+    font-family: 'Poor Story', cursive;
+    text-align: center;
+    color: rgb(38, 38, 78);
+    opacity: 0;
+    animation: popUpPlusOne 0.8s ease-out forwards;
+  }
+  
+  @keyframes popUpPlusOne {
+    0% {
+      opacity: 0;
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  .emoji-block {
+    width: 10%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 1.2em;
+  }
+  
+  .emoji-1 {
+    grid-area: emoji-1;
+  }
+  
+  .emoji-2 {
+    grid-area: emoji-2;
+  }
+  
+  .emoji-3 {
+    grid-area: emoji-3;
+  }
+  
+  .emoji-4 {
+    grid-area: emoji-4;
+    justify-self: flex-end;
+  }
+  
+  .emoji-5 {
+    grid-area: emoji-5;
+    justify-self: flex-end;
+  }
+  
+  .emoji-6 {
+    grid-area: emoji-6;
+    justify-self: flex-end;
+  }
+  
+  .love-counter {
+    font-family: 'Poor Story', cursive;
+  }
+  
+  .send-love-btn {
+    width: 100%;
+    margin-top: 1em;
+    padding: 0.5em;
+    position: relative;
+    font-size: 1em;
+    font-weight: bold;
+    color: rgb(38, 38, 78);
+    background-color: #faaca8;
+    border: 2px solid #faaca8;
+    border-radius: 100vmax;
+    box-shadow: 0 0 0.3rem -2px rgb(38, 38, 78);
+    transition: 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .send-love-btn:before {
+    content: '';
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #faaca842;
+    border-radius: 100vmax;
+    z-index: 0;
+    /* animation: btnCliked 0.8s ease-out infinite; */
+  }
+  
+  @keyframes btnCliked {
+    from {
+      width: 0;
+    }
+  
+    to {
+      width: 100%;
+    }
+  }
+  
+  @media (hover: hover) {
+    .send-love-btn:hover {
+      background-color: #e0def1;
+    }
+  }
+  
+  .created-by {
+    width: 100%;
+    font-size: 0.6em;
+    text-align: center;
+  }
+  
